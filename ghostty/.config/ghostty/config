@@ -1,0 +1,13 @@
+theme = catppuccin-mocha
+
+font-family = RobotoMono Nerd Font
+font-size = 20
+
+cursor-style = block
+cursor-invert-fg-bg = true
+
+confirm-close-surface = false
+window-decoration = true
+window-padding-x = 10
+window-padding-y = 10
+window-padding-balance = true
