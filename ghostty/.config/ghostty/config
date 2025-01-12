@@ -1,8 +1,9 @@
-theme = catppuccin-mocha
+theme = rose-pine
 
 font-family = RobotoMono Nerd Font
-font-size = 20
+font-size = 12
 
+background = 000000
 cursor-style = block
 cursor-invert-fg-bg = true
 
