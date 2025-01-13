@@ -4,6 +4,9 @@ font-family = RobotoMono Nerd Font
 font-size = 12
 
 background = 000000
+background-opacity = 0.9
+background-blur-radius = 20
+
 cursor-style = block
 cursor-invert-fg-bg = true
 
