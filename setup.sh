@@ -1,13 +1,6 @@
 #!/bin/bash
 set -eu
 
-echo "Login as sudo"
-
-if ! sudo -v; then
-    echo "Failed to obtain sudo privileges."
-    exit 1
-fi
-
 echo "Installing dependencies"
 
 sudo apt update

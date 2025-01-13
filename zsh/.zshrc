@@ -65,10 +65,6 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
-eval "$(starship init zsh)"
-
-eval "$(zoxide init zsh)"
 
 # User configuration
 
@@ -124,4 +120,10 @@ export PATH="$PATH:$ZVM_INSTALL/"
 source "$HOME/.zshprofile"
 
 [ -s "$HOME/.zshextra" ] && source "$HOME/.zshextra"
+
+
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+eval "$(starship init zsh)"
+
+eval "$(zoxide init zsh)"
 
