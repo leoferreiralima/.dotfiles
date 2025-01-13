@@ -12,5 +12,7 @@ install_zig
 
 install_ghostty
 
+install_zoxide
+
 install_font "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/RobotoMono.zip"
 

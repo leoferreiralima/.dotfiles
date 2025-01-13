@@ -30,3 +30,7 @@ install_ghostty () {
   rm "$GHOSTTY_DEB_FILE"
 }
 
+install_zoxide() {
+  curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+}
+

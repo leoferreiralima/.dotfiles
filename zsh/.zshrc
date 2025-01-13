@@ -65,8 +65,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
-eval "$(starship init zsh)"
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+eval "$(starship init zsh)"
+
+eval "$(zoxide init zsh)"
 
 # User configuration
 
