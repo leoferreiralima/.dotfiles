@@ -28,6 +28,7 @@ done
 declare -A scripts=(
   ["packages"]="install_packages"
   ["zsh"]="install_zsh"
+  ["tmux"]="install_tmux"
   ["zig"]="install_zig"
   ["ghostty"]="install_ghostty"
   ["zoxide"]="install_zoxide"
@@ -37,6 +38,7 @@ declare -A scripts=(
 scripts_name=(
   packages
   zsh
+  tmux
   zig
   ghostty
   zoxide

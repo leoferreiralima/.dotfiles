@@ -26,7 +26,6 @@ install_packages () {
   sudo apt install -y \
   stow \
   fzf \
-  stow \
   bat
 }
 
@@ -44,5 +43,11 @@ install_ghostty () {
 
 install_zoxide() {
   curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+}
+
+install_tmux() {
+  sudo apt install -y tmux
+
+  sudo git clone https://github.com/tmux-plugins/tpm $HOME/.config/tmux/.tmux/plugins/tpm
 }
 
