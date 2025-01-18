@@ -32,7 +32,7 @@ declare -A scripts=(
   ["zig"]="install_zig"
   ["ghostty"]="install_ghostty"
   ["zoxide"]="install_zoxide"
-  ["nerd font"]="install_font \"https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/RobotoMono.zip\""
+  ["nerd-font"]="install_font \"https://github.com/ryanoasis/nerd-fonts/releases/download/v3.3.0/RobotoMono.zip\""
 )
 
 scripts_name=(
@@ -42,10 +42,10 @@ scripts_name=(
   zig
   ghostty
   zoxide
-  "nerd font"
+  "nerd-font"
 )
 
-selected_scripts=$(printf "%s\n" "${scripts_name[@]}" | gum choose --no-limit --header "Dotfiles Install")
+read -a selected_scripts <<< $(echo -e $(printf "%s\n" "${scripts_name[@]}" | gum choose --no-limit --header "Dotfiles Install"))
 
 for script_name in "${selected_scripts[@]}"; do
   script=${scripts[$script_name]}
