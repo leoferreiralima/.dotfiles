@@ -128,3 +128,6 @@ eval "$(starship init zsh)"
 
 eval "$(zoxide init zsh)"
 
+#Binds
+bindkey -s '^F' 'ts\n'
+
