@@ -3,7 +3,7 @@ alias vi="nvim"
 alias v="nvim"
 
 alias bat="batcat"
-alias cat="batcat -p --color=always"
+#alias cat="batcat -p --color=always"
 
 alias ts="tmux-sessionizer"
 

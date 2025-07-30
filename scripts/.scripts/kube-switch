@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+current_context=$(kubectl config current-context)
+
+selected_context=$(
+    kubectl config get-contexts -o name | \
+    sed "s/^${current_context}$/* ${current_context}/" | \
+    gum filter --placeholder "Select a context"
+)
+
+if [[ -n "$selected_context" ]]; then
+    context_to_use=$(echo "$selected_context" | sed 's/^* //')
+
+    kubectl config use-context "$context_to_use"
+fi

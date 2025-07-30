@@ -44,6 +44,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # much, much faster.
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 
+ZSH_AUTOSUGGEST_IGNORE_PASTE="true"
+
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
 # You can set one of the optional three formats:
@@ -59,9 +61,15 @@ export ZSH="$HOME/.oh-my-zsh"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  fast-syntax-highlighting
   zsh-autosuggestions
+  zsh-syntax-highlighting
 )
+
+typeset -gA ZSH_HIGHLIGHT_HIGHLIGHTERS
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root url)
+
+typeset -gA ZSH_HIGHLIGHT_STYLES
+ZSH_HIGHLIGHT_STYLES[url]='fg=cyan,underline'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -94,6 +102,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
 export TMUX_CONF=~/.config/tmux/tmux.conf
 
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
@@ -118,6 +127,9 @@ export ZVM_INSTALL="$HOME/.zvm/self"
 export PATH="$PATH:$HOME/.zvm/bin"
 export PATH="$PATH:$ZVM_INSTALL/"
 
+# Rust
+export PATH="$PATH:$HOME/.cargo/bin"
+
 source "$HOME/.zshprofile"
 
 [ -s "$HOME/.zshextra" ] && source "$HOME/.zshextra"
@@ -131,3 +143,9 @@ eval "$(zoxide init zsh)"
 #Binds
 bindkey -s '^F' 'ts\n'
 
+
+# opencode
+export PATH=/home/magalu/.opencode/bin:$PATH
+
+# add Pulumi to the PATH
+export PATH=$PATH:/home/magalu/.pulumi/bin

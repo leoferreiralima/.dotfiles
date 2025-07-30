@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+INACTIVE_TIMEOUT=259200
+
+NOW=$(date +%s)
+
+tmux ls -F '#{session_name} #{session_activity} #{session_attached}' | while read -r session_name session_activity session_attached; do
+  if [ "$session_attached" -eq 1 ]; then
+    echo "Session '$session_name' is active (attached), skipping."
+    continue
+  fi
+
+  inactive_duration=$((NOW - session_activity))
+
+  if [ "$inactive_duration" -gt "$INACTIVE_TIMEOUT" ]; then
+    echo "Session '$session_name' is inactive for $inactive_duration seconds. Killing."
+    tmux kill-session -t "$session_name"
+  else
+    echo "Session '$session_name' is within the activity window, skipping."
+  fi
+done
